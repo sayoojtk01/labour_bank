@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5 ">
+  
+    <div class="row mx-0 max-width justify-content-center ">
+      <div class="col-md-7 col-lg-5 px-lg-2 col-xl-4 px-xl-0 px-xxl-3">
+        
+        <form
+          method="post"
+          class="w-100 mt-5 rounded-1 p-5 border bg-white"
+          action="/apply_job/"
+          enctype="multipart/form-data"
+        >{% csrf_token %}
+          <label class="d-block mb-4">
+            <span class="form-label d-block">Your name</span>
+            <input
+              required
+              name="name"
+              type="text"
+              class="form-control"
+              placeholder="Joe Bloggs"
+            />
+          </label>
+  
+          <label class="d-block mb-4">
+            <span class="form-label d-block">Email address</span>
+            <input
+              required
+              name="email"
+              type="email"
+              class="form-control"
+              placeholder="joe.bloggs@example.com"
+            />
+          </label>
+  
+          <label class="d-block mb-4">
+            <span class="form-label d-block">Years of experience</span>
+            <select required name="experience" class="form-select">
+              <option>Less than a year</option>
+              <option>1 - 2 years</option>
+              <option>2 - 4 years</option>
+              <option>4 - 7 years</option>
+              <option>7 - 10 years</option>
+              <option>10+ years</option>
+            </select>
+          </label>
+  
+          <label class="d-block mb-4">
+            <span class="form-label d-block">Tell us more about yourself</span>
+            <textarea
+              name="message"
+              class="form-control"
+              rows="3"
+              placeholder="What motivates you?"
+            ></textarea>
+          </label>
+  
+          <label class="d-block mb-4">
+            <span class="form-label d-block">Your CV</span>
+            <input required name="cv" type="file" class="form-control" />
+          </label>
+  
+  
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary px-3 rounded-3">
+              Apply
+            </button>
+          </div>
+          <h5 style="color:red;text-align:center;">{{msg19}}</h5>
+          
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+
+
+
+  {% extends 'base.html' %}
+
+  {% block content %}
+    <!-- ======= Hero Section ======= -->
+  
+  {% if request.session.id %}
+  
+    
+    <section>
+      <!-- <h5 style="color:red;text-align:center;">{{msg}}</h5> -->
+      <div class=" rounded-4 d-flex mt-3 justify-content-center p-4 w-100">
+        
+        <div class="card border border-success p-2" style="width: 33rem; ">
+            
+          <img class="card p-2 mt-5  ms-5 d-flex justify-content-center rounded-9" src="{{request.session.im}}" width="80%" height="100px" alt="Card image cap">
+          <div class="card-body p-5">
+            <h5 class="card-title d-flex justify-content-center">Welcome {{request.session.gname}}</h5>
+            <h5 class="card-title d-flex justify-content-center">Employer {{request.session.sname}}</h5>
+            <div class="container mb-3">
+            <!-- <p class="card-text  d-flex justify-content-center" >Job-Category:{{request.session.job}}</p> -->
+            <!-- <p class="card-text  d-flex justify-content-center">Address:{{request.session.add}}</p>
+            <p class="card-text  d-flex justify-content-center">Education:{{request.session.ed}}</p> -->
+            
+            <p class="card-text mt-3 d-flex justify-content-center" style="color:red;text-align:center;" >{{msg}}</p>
+         
+        </div>
+        <button class="card-text ms-5 btn btn-dark d-flex justify-content-center"  type="button" onclick="document.location='/useredit_user?uuid={{request.session.id}}'"><a >  Edit your details</a></button>
+      </div>
+      
+    </section>
+  
+  {% endif %}
+{% endblock %}
+  
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="static/assets/vendor/aos/aos.js"></script>
+    <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="static/assets/js/main.js"></script>
+  
+  </body>
+  
+  </html>
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/static/jobadd/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/jobadd/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/jobadd/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/jobadd/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/jobadd/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/static/jobadd/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/static/jobadd/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1 mt-5">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="/static/jobadd/images/img-01.png" alt="IMG">
+			</div>
+
+			<form class="contact1-form validate-form" action="/add_job/" method="post" enctype="multipart/form-data">{% csrf_token %}
+				<span class="contact1-form-title">
+					Post A Job
+				</span>
+				<h5 style="color:red;text-align:center;">{{msg15}}</h5>
+				<!-- <h5 style="color:red;text-align:center;">{{msg16}}</h5> -->
+				<div class="wrap-input1 validate-input" data-validate = "Job Name is required">
+					<input readonly  class="input1" type="text" name="cmpy" value="{{request.session.gname}}" placeholder="Comapany name">
+					<span class="shadow-input1"></span>
+				</div>
+				<div class="wrap-input1 validate-input" data-validate = "Job Name is required">
+					<input class="input1" type="text"  name="jname" placeholder="Job Type">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Salary is required: ex@abc.xyz">
+					<input class="input1" type="text" name="salary" placeholder="Salary">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Working Time is required">
+					<input class="input1" type="text" name="time" placeholder="Working Time">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Vaccancy is required">
+					<input class="input1" type="text" name="vaccancy" placeholder="No OF Vaccancy">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button  type="submit" class="contact1-form-btn">
+						<span>
+							 Add Job Poster
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="/static/jobadd/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/jobadd/vendor/bootstrap/js/popper.js"></script>
+	<script src="/static/jobadd/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/jobadd/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/static/jobadd/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="/static/jobadd/js/main.js"></script>
+
+{% endblock %}
